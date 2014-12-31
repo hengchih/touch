@@ -6,16 +6,17 @@
     $.fn.nineyiTouch = function() {
 
         var nineSwipe = function () {
-            var sx = 0, sy = 0, cx = 0, cy = 0;
+            var sx = 0, sy = 0, cx = 0, cy = 0, isup=true;
             return {
                 touchstart: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     sx = touch.pageX - cx;
                     sy = touch.pageY - cy;
+                    isup = false;
                 },
                 touchmove: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    $(this).css({
+                    isup || $(this).css({
                         'webkitTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
                         '-webkit-transition': 'all 600ms cubic-bezier(0.165, 0.84, 0.44, 1)',
                         'transition': 'all 600ms cubic-bezier(0.165, 0.84, 0.44, 1)'
@@ -25,7 +26,7 @@
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     cx = touch.pageX - sx;
                     cy = touch.pageY - sy;
-
+                    isup=true;
                 }
             };
         };
