@@ -18,9 +18,10 @@
                 touchmove: function(e){
                     isMove = true;
                     counter += 1;
+                    var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     $('footer').append((touch.pageX - sx) + ',').append('<br/>');
-                    if(counter>=5){
-                        var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+                    if(counter>=3){
+
                         $(this).css({
                             'webkitTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)',
                             'mozTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
