@@ -19,21 +19,18 @@
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-overflow-scrolling: touch;
-  z-index: 0;
-  overflow: scroll;
 }
-/* line 17, ../sass/nineyiCarousel.sass */
+/* line 14, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-ul:before, .nineyi-carousel .nc-ul:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 21, ../sass/nineyiCarousel.sass */
+/* line 18, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-li {
   float: left;
 }
-/* line 23, ../sass/nineyiCarousel.sass */
+/* line 20, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-li img {
   width: 100%;
 }

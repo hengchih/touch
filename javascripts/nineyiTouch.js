@@ -7,33 +7,73 @@
 
 
         var nt = (function (p) {
-            var sx = 0, sy = 0, cx = 0, cy = 0, isMove = false;
+            var sx = 0,
+                sy = 0,
+                cx = 0,
+                cy = 0,
+                x = 0,
+                y = 0,
+                isMove = false,
+                isHorizontal = null,
+                isLock = false;
             return {
                 touchstart: function(e){
                     isMove = false;
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     sx = touch.pageX - cx;
                     sy = touch.pageY - cy;
+                    x = touch.pageX;
+                    y = touch.pageY;
+                    console.log('start-> x:' + x + ',y:' + y );
                 },
                 touchmove: function(e){
+                    var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0],
+                        mx = touch.pageX,
+                        my = touch.pageY,
+                        offsetX = mx - x,
+                        offsetY = my - y;
+                    //console.log('move-> mx:' + mx + ',my:' + my );
                     isMove = true;
-                    var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    //$('footer').append((touch.pageX - sx) + ',').append('<br/>');
 
-                    $(this).css({
-                        'webkitTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)',
-                        'transform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
-                    });
+                    if(!isLock){
 
-                    e.preventDefault();
+                        if( Math.abs( Math.atan( offsetY / offsetX ) * ( 180/ Math.PI ) ) > 60 ){ // 垂直
+                            isHorizontal = false;
+                            console.log('v');
+                        }else{
+                            isHorizontal = true;
+                            e.preventDefault();
+                            console.log('h');
+                        }
+                        isLock = true;
+                    }
+
+                    if(isHorizontal){
+                        $(this).css({
+                            'webkitTransform':'translate3d('+(mx - sx)+'px,0px,0)',
+                            'transform':'translate3d('+(mx - sx)+'px,0px,0)'
+                        });
+                    }
+
+
 
                 },
                 touchend: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    cx = touch.pageX - sx;
-                    cy = touch.pageY - sy;
-                    isMove = false;
 
+
+                    if(isHorizontal){
+                        cx = touch.pageX - sx;
+                        cy = touch.pageY - sy;
+                    }
+
+                    if(!isMove){
+                        alert('click');
+                    }
+
+                    isMove = false;
+                    isHorizontal = null;
+                    isLock = false;
                 }
             };
         })(p);
