@@ -42,14 +42,14 @@
 利用css硬件加速
 <div id="box" class="box">
     <ul style="width: 6640px; -webkit-transform: translate3d(-2400px, 0px, 0px);">
-        <li style="width: 800px; float: left;"><img src="./利用css硬件加速_files/ffffff"></li>
-        <li style="margin-left: 30px; width: 800px; float: left;"><img src="./利用css硬件加速_files/ffffff(1)"></li>
-        <li style="margin-left: 30px; width: 800px; float: left;"><img src="./利用css硬件加速_files/ffffff(2)"></li>
-        <li style="margin-left: 30px; width: 800px; float: left;"><img src="./利用css硬件加速_files/ffffff(3)"></li>
-        <li style="margin-left: 30px; width: 800px; float: left;"><img src="./利用css硬件加速_files/ffffff(4)"></li>
-        <li style="margin-left: 30px; width: 800px; float: left;"><img src="./利用css硬件加速_files/ffffff"></li>
-        <li style="margin-left: 30px; width: 800px; float: left;"><img src="./利用css硬件加速_files/ffffff(1)"></li>
-        <li style="margin-left: 30px; width: 800px; float: left;"><img src="./利用css硬件加速_files/ffffff(2)"></li>
+        <li style="width: 800px; float: left;"><img src="s.jpg"></li>
+        <li style="margin-left: 30px; width: 800px; float: left;"><img src="s.jpg"></li>
+        <li style="margin-left: 30px; width: 800px; float: left;"><img src="s.jpg"></li>
+        <li style="margin-left: 30px; width: 800px; float: left;"><img src="s.jpg"></li>
+        <li style="margin-left: 30px; width: 800px; float: left;"><img src="s.jpg"></li>
+        <li style="margin-left: 30px; width: 800px; float: left;"><img src="s.jpg"></li>
+        <li style="margin-left: 30px; width: 800px; float: left;"><img src="s.jpg"></li>
+        <li style="margin-left: 30px; width: 800px; float: left;"><img src="s.jpg"></li>
     </ul>
 </div>
 <footer></footer>
@@ -98,10 +98,11 @@
             //设置item的宽度
             this.find("li").each(function(a,b){
                 if(a != 0){$(b).css("marginLeft", space);}
-                $(b).css("width", imgWidth);
+                $(b).css("width", "25%");
                 $(b).css("float",'left');
-                var _bgColor = bgColor.shift() || (bgColor = ['9b50ba','354b60','ea6153','f2ca27','40d47e'], _bgColor = bgColor.shift());
-                $(b).find('img').attr('src','http://dummyimage.com/'+ imgWidth +'x'+ $container.height() +'/'+_bgColor+'/ffffff');
+                $('img').css('width','100%');
+                //var _bgColor = bgColor.shift() || (bgColor = ['9b50ba','354b60','ea6153','f2ca27','40d47e'], _bgColor = bgColor.shift());
+                //$(b).find('img').attr('src','http://dummyimage.com/'+ imgWidth +'x'+ $container.height() +'/'+_bgColor+'/ffffff');
             });
 
             //下一页
