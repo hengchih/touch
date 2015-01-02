@@ -50,8 +50,8 @@
 
                     if(isHorizontal){
                         $(this).css({
-                            'webkitTransform':'translate('+(mx - sx)+'px,0px)',
-                            'transform':'translate('+(mx - sx)+'px,0px)'
+                            'webkitTransform':'translate3d('+(mx - sx)+'px,0px,0)',
+                            'transform':'translate3d('+(mx - sx)+'px,0px,0)'
                         });
                     }
 
