@@ -7,36 +7,33 @@
 
 
         var nt = (function (p) {
-            var sx = 0, sy = 0, cx = 0, cy = 0, isMove = false,reference,prevOrNext ;
+            var sx = 0, sy = 0, cx = 0, cy = 0, isMove = false;
             return {
                 touchstart: function(e){
                     isMove = false;
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    reference = touch.clientX;
-                    //$('footer').append('start' + (touch.clientX ) + ',').append('<br/>');
-
+                    sx = touch.pageX - cx;
+                    sy = touch.pageY - cy;
                 },
                 touchmove: function(e){
                     isMove = true;
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    //$('footer').append((touch.clientX - sx) + ',').append('<br/>');
-                    prevOrNext = touch.clientX - reference; //正数前进，负数后退
-                    reference  = touch.clientX;
-                    var ml = +($(this).css('-webkit-transform').match(/\-?[0-9]+\.?[0-9]*/g)[4]);
+                    //$('footer').append((touch.pageX - sx) + ',').append('<br/>');
 
-                    var offset = ml + prevOrNext;
-                    console.log(prevOrNext);
+                    $(this).css({
+                        'webkitTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)',
+                        'mozTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
+                    });
+
                     e.preventDefault();
 
-                    $(this).css('-webkit-transform','translate3d('+ (offset-20) +'px, 0, 0)');
                 },
                 touchend: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    cx = touch.clientX - sx;
-                    cy = touch.clientY - sy;
+                    cx = touch.pageX - sx;
+                    cy = touch.pageY - sy;
                     isMove = false;
-                    e.preventDefault();
-                    $('footer').append('end' + (touch.clientX - sx) + ',').append('<br/>');
+
                 }
             };
         })(p);
