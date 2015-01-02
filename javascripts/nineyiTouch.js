@@ -13,17 +13,19 @@
                     isMove = false;
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     sx = touch.pageX - cx;
-                    sy = touch.pageY - cy;
+                    //sy = touch.pageY - cy;
                 },
                 touchmove: function(e){
                     isMove = true;
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     $(this).css({
-                        'webkitTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
-                        'mozTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
-                        'msTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
-                        'transform':'translate3d('+(touch.pageX-sx)+'px,0px,0)'
+                        'webkitTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)',
+                        'transform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
                     });
+                    //cx = touch.pageX - sx;
+                    //cy = touch.pageY - sy;
+                    //sx = touch.pageX - cx;
+                    //sy = touch.pageY - cy;
                     //p.swipeLeft && p.swipeLeft();
                 },
                 touchend: function(e){
