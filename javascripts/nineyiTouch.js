@@ -7,7 +7,7 @@
 
 
         var nt = (function (p) {
-            var sx = 0, sy = 0, cx = 0, cy = 0, isMove = false;
+            var sx = 0, sy = 0, cx = 0, cy = 0, isMove = false, counter = 0;
             return {
                 touchstart: function(e){
                     isMove = false;
@@ -17,12 +17,18 @@
                 },
                 touchmove: function(e){
                     isMove = true;
-                    var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    $(this).css({
-                        'webkitTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)',
-                        'transform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
-                    });
+                    counter += 1;
                     $('footer').append((touch.pageX - sx) + ',').append('<br/>');
+                    if(counter>=5){
+                        var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+                        $(this).css({
+                            'webkitTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)',
+                            'mozTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
+                        });
+                        counter = 0;
+                        $('footer').html('');
+                    }
+
 
                 },
                 touchend: function(e){

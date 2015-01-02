@@ -22,8 +22,10 @@
     </div>
 
 </div>
+<button>clear</button>
+<footer>
 
-<footer></footer>
+</footer>
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="javascripts/nineyiCarousel.js"></script>
 <script src="javascripts/nineyiTouch.js"></script>
@@ -31,7 +33,9 @@
 <script>
     $(function(){
         var $ncUl = $('.nineyi-carousel .nc-ul');
-
+$('button').click(function(e){
+   $('footer').html('');
+});
         $ncUl.nineyiTouch({
             swipeLeft: function(){
                 //console.log(typeof $ncUl.css('transform'));
