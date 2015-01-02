@@ -37,7 +37,7 @@
 
                     if(!isLock){
 
-                        if( Math.abs( Math.atan( offsetY / offsetX ) * ( 180/ Math.PI ) ) > 60 ){ // 垂直
+                        if( Math.abs( Math.atan( offsetY / offsetX ) * ( 180/ Math.PI ) ) > 80 ){ // 垂直
                             isHorizontal = false;
                             console.log('v');
                         }else{
