@@ -22,11 +22,8 @@
                         'webkitTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)',
                         'transform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
                     });
-                    //cx = touch.pageX - sx;
-                    //cy = touch.pageY - sy;
-                    //sx = touch.pageX - cx;
-                    //sy = touch.pageY - cy;
-                    //p.swipeLeft && p.swipeLeft();
+                    $('footer').append((touch.pageX - sx) + ',').append('<br/>');
+
                 },
                 touchend: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
