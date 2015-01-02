@@ -1,3 +1,19 @@
+@import "compass/css3"
+
 .nineyi-carousel
-  .carousel-ul
-    min-width: 100%
+  width: 100%
+  margin: 0 auto
+  border: 1px solid #bfbfbf
+  overflow: hidden
+  box-sizing: border-box
+  .nc-ul
+    +transition(all 300ms linear)
+
+    &:before, &:after
+      content: ''
+      display: table
+      clear: both
+  .nc-li
+    float: left
+    img
+      width: 100%

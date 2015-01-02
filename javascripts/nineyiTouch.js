@@ -3,9 +3,10 @@
  */
 (function( $ ){
     "use strict";
-    $.fn.nineyiTouch = function() {
+    $.fn.nineyiTouch = function(p) {
 
-        var nineSwipe = function () {
+
+        var nt = (function (p) {
             var sx = 0, sy = 0, cx = 0, cy = 0, isup=true;
             return {
                 touchstart: function(e){
@@ -18,9 +19,11 @@
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     isup || $(this).css({
                         'webkitTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
-                        '-webkit-transition': 'all 600ms cubic-bezier(0.165, 0.84, 0.44, 1)',
-                        'transition': 'all 600ms cubic-bezier(0.165, 0.84, 0.44, 1)'
+                        'mozTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
+                        'msTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
+                        'transform':'translate3d('+(touch.pageX-sx)+'px,0px,0)'
                     });
+                    p.swipeLeft && p.swipeLeft();
                 },
                 touchend: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
@@ -29,12 +32,12 @@
                     isup=true;
                 }
             };
-        };
+        })(p);
 
 
         return this.each(function() {
 
-            var swipe = nineSwipe();
+            var swipe = nt;
 
             $(this).on('touchstart',swipe.touchstart);
             $(this).on('touchmove',swipe.touchmove);

@@ -3,20 +3,45 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>swipe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/layout.css"/>
-    <link rel="stylesheet" href="stylesheets/nineyiSwipe.css"/>
+    <link rel="stylesheet" href="stylesheets/nineyiCarousel.css"/>
 </head>
 <body>
 
-<img class="img" src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/>
+<div class="wrap">
+
+    <div class="nineyi-carousel">
+        <ul class="nc-ul">
+            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
+            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
+            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
+            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
+            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
+        </ul>
+    </div>
+
+</div>
+
 <footer>footer</footer>
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="javascripts/nineyiTouch.js"></script>
 <script src="javascripts/nineyiCarousel.js"></script>
+<script src="javascripts/nineyiTouch.js"></script>
+
 <script>
     $(function(){
-       $('.img').nineyiTouch();
+        var $ncUl = $('.nineyi-carousel .nc-ul');
+        $ncUl.nineyiTouch({
+            swipeLeft: function(){
+                console.log(typeof $ncUl.css('transform'));
+            },
+            swipeRight: function(){
+
+            }
+        });
+        $('.nineyi-carousel').nineyiCarousel();
     })
 </script>
+
 </body>
 </html>
