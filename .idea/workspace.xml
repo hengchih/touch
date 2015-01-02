@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2acb88fa-fdd1-4085-9c39-b02ce5ed9e6d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascripts/nineyiTouch.js" afterPath="$PROJECT_DIR$/javascripts/nineyiTouch.js" />
     </list>
     <ignored path="touch.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +25,7 @@
     <favorites_list name="touch" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4282528">
+    <splitter split-orientation="horizontal" split-proportion="0.33828998">
       <split-first>
         <leaf>
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
@@ -75,8 +75,8 @@
           <file leaf-file-name="nineyiTouch.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/javascripts/nineyiTouch.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.2810559" vertical-offset="656" max-vertical-offset="1300">
-                  <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
+                <state vertical-scroll-proportion="0.7375776" vertical-offset="0" max-vertical-offset="1300">
+                  <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
                   <folding>
                     <element signature="e#0#45#0" expanded="false" />
                   </folding>
@@ -100,8 +100,8 @@
         <option value="$PROJECT_DIR$/sass/nineyiTouch.sass" />
         <option value="$PROJECT_DIR$/sass/nineyiCarousel.sass" />
         <option value="$PROJECT_DIR$/javascripts/nineyiCarousel.js" />
-        <option value="$PROJECT_DIR$/javascripts/nineyiTouch.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/javascripts/nineyiTouch.js" />
       </list>
     </option>
   </component>
@@ -431,21 +431,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascripts/nineyiTouch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2810559" vertical-offset="656" max-vertical-offset="1300">
-          <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3090615" vertical-offset="659" max-vertical-offset="1375">
           <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/nineyiTouch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7375776" vertical-offset="0" max-vertical-offset="1300">
+          <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
