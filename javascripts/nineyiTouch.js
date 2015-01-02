@@ -18,10 +18,10 @@
                 touchmove: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     isup || $(this).css({
-                        'webkitTransform':'translate3d(320px,0px,0)',
-                        'mozTransform':'translate3d(320px,0px,0)',
-                        'msTransform':'translate3d(320px,0px,0)',
-                        'transform':'translate3d(320px,0px,0)'
+                        'webkitTransform':'translate3d(-320px,0px,0)',
+                        'mozTransform':'translate3d(-320px,0px,0)',
+                        'msTransform':'translate3d(-320px,0px,0)',
+                        'transform':'translate3d(-320px,0px,0)'
                     });
                     p.swipeLeft && p.swipeLeft();
                 },
