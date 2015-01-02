@@ -10,6 +10,9 @@
     +transition(all .1s ease)
     +transform(translate3d(0px, 0px, 0px))
     +backface-visibility(hidden)
+    -webkit-overflow-scrolling: touch
+    z-index: 0
+    overflow: scroll
 
     &:before, &:after
       content: ''
@@ -17,8 +20,5 @@
       clear: both
   .nc-li
     float: left
-    height: 300px
-    @include filter-gradient(#1e5799, #7db9e8, horizontal)
-    @include background-image(linear-gradient(left, #1e5799 0%,#2989d8 50%,#7db9e8 100%))
     img
       width: 100%
