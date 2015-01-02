@@ -16,7 +16,9 @@
   -ms-transform: translate3d(0px, 0px, 0px);
   -webkit-transform: translate3d(0px, 0px, 0px);
   transform: translate3d(0px, 0px, 0px);
+  -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 /* line 14, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-ul:before, .nineyi-carousel .nc-ul:after {

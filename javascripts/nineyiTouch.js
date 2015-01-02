@@ -22,7 +22,7 @@
 
                     $(this).css({
                         'webkitTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)',
-                        'mozTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
+                        'transform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
                     });
 
                     e.preventDefault();
