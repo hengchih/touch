@@ -22,8 +22,10 @@
 /* line 16, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-li {
   float: left;
+  height: 200px;
+  background: #00b3ee;
 }
-/* line 18, ../sass/nineyiCarousel.sass */
-.nineyi-carousel .nc-li img {
-  width: 100%;
+/* line 20, ../sass/nineyiCarousel.sass */
+.nineyi-carousel .nc-li.red {
+  background: red;
 }

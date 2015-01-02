@@ -13,11 +13,12 @@
 
     <div class="nineyi-carousel">
         <ul class="nc-ul">
-            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
-            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
-            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
-            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
-            <li class="nc-li"><img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1234649_10151635575796984_395126328_n.jpg?oh=5df6f1a50d52d09a5be308e72e421219&oe=54FC69DA&__gda__=1429230805_10714a3a3cd3330f894fee61cf012841" alt="img"/></li>
+            <li class="nc-li"></li>
+            <li class="nc-li red"></li>
+            <li class="nc-li"></li>
+            <li class="nc-li red"></li>
+            <li class="nc-li"></li>
+            <li class="nc-li red"></li>
         </ul>
     </div>
 
@@ -29,16 +30,16 @@
 <script src="javascripts/nineyiTouch.js"></script>
 
 <script>
-    $(function(){
+    $(function () {
         var $ncUl = $('.nineyi-carousel .nc-ul');
-        $ncUl.on('click',function(e){
-           alert('click');
+        $ncUl.on('click', function (e) {
+            alert('click');
         });
         $ncUl.nineyiTouch({
-            swipeLeft: function(){
+            swipeLeft: function () {
                 //console.log(typeof $ncUl.css('transform'));
             },
-            swipeRight: function(){
+            swipeRight: function () {
 
             }
         });
