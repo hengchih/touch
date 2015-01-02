@@ -12,19 +12,19 @@
                 touchstart: function(e){
                     isMove = false;
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    sx = touch.pageX - cx;
+                    sx = touch.clientX - cx;
                     //sy = touch.pageY - cy;
-                    $('footer').append('start' + (touch.pageX ) + ',').append('<br/>');
+                    $('footer').append('start' + (touch.clientX ) + ',').append('<br/>');
                     e.preventDefault();
                 },
                 touchmove: function(e){
                     isMove = true;
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    $('footer').append((touch.pageX - sx) + ',').append('<br/>');
-                    console.log(touch.pageX - sx);
+                    $('footer').append((touch.clientX - sx) + ',').append('<br/>');
+                    console.log(touch.clientX - sx);
                     $(this).css({
-                        'webkitTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)',
-                        'mozTransform':'translate3d('+(touch.pageX - sx)+'px,0px,0)'
+                        'webkitTransform':'translate3d('+(touch.clientX - sx)+'px,0px,0)',
+                        'transform':'translate3d('+(touch.clientX - sx)+'px,0px,0)'
                     });
 
                     e.preventDefault();
@@ -32,11 +32,11 @@
                 },
                 touchend: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    cx = touch.pageX - sx;
-                    cy = touch.pageY - sy;
+                    cx = touch.clientX - sx;
+                    cy = touch.clientY - sy;
                     isMove = false;
                     e.preventDefault();
-                    $('footer').append('end' + (touch.pageX - sx) + ',').append('<br/>');
+                    $('footer').append('end' + (touch.clientX - sx) + ',').append('<br/>');
                 }
             };
         })(p);
