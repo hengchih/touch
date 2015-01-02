@@ -36,12 +36,12 @@
                     referenceY = newReferenceY;
 
                     //console.log(Math.abs( offsetY / offsetX ) * rd);
-                    if( Math.abs( offsetY / offsetX ) * rd < 60 ){ //水平
+                    if( Math.abs(Math.atan(offsetY / offsetX)  * rd) < 60 ){ //水平
                         reference  = newReference;
                         //获取css3属性值
                         var transform = $this.css('-webkit-transform') || $container.css('transform') || $container.css('-moz-transform') || $container.css('-ms-transform');
                         var ml = +(transform.match(/\-?[0-9]+\.?[0-9]*/g)[4]);
-                        console.log(offsetX);
+                        //console.log(offsetX);
                         //offset = ml + prevOrNext;
                         /*超过界限禁止移动*/
                         //if( offset > 0 || offset <= -$containerWidth + targetWidth + space ){return;}
