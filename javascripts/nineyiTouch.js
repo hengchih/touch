@@ -7,29 +7,28 @@
 
 
         var nt = (function (p) {
-            var sx = 0, sy = 0, cx = 0, cy = 0, isup=true;
+            var sx = 0, sy = 0, cx = 0, cy = 0, isMove = false;
             return {
                 touchstart: function(e){
+                    isMove = false;
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     sx = touch.pageX - cx;
                     sy = touch.pageY - cy;
-                    isup = false;
                 },
                 touchmove: function(e){
+                    isMove = true;
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-                    isup || $(this).css({
-                        'webkitTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
-                        'mozTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
-                        'msTransform':'translate3d('+(touch.pageX-sx)+'px,0px,0)',
-                        'transform':'translate3d('+(touch.pageX-sx)+'px,0px,0)'
-                    });
-                    p.swipeLeft && p.swipeLeft();
+                    var prevOrNext = touch.pageX - sx;
+                    var ml = +($(this).css('-webkit-transform').match(/\-?[0-9]+\.?[0-9]*/g)[1]);
+                    var offset = ml + prevOrNext;
+                    //p.swipeLeft && p.swipeLeft();
+                    $(this).css('-webkit-transform','translate3d('+ offset +'px, 0, 0)');
                 },
                 touchend: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
                     cx = touch.pageX - sx;
                     cy = touch.pageY - sy;
-                    isup=true;
+                    isMove = false;
                 }
             };
         })(p);
