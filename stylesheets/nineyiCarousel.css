@@ -22,7 +22,7 @@
 /* line 16, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-li {
   float: left;
-  height: 200px;
+  height: 500px;
   background: url("../s.jpg");
   background-size: cover;
   background-repeat: no-repeat;
