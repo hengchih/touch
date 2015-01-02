@@ -24,7 +24,6 @@
                     sy = touch.pageY - cy;
                     x = touch.pageX;
                     y = touch.pageY;
-                    console.log('start-> x:' + x + ',y:' + y );
                 },
                 touchmove: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0],
@@ -32,43 +31,52 @@
                         my = touch.pageY,
                         offsetX = mx - x,
                         offsetY = my - y;
-                    //console.log('move-> mx:' + mx + ',my:' + my );
+
                     isMove = true;
 
                     if(!isLock){
-
-                        if( Math.abs( Math.atan( offsetY / offsetX ) * ( 180/ Math.PI ) ) > 80 ){ // 垂直
+                        if( Math.abs( Math.atan( offsetY / offsetX ) * ( 180/ Math.PI ) ) > 70 ){ // 垂直
                             isHorizontal = false;
+                            $('body,html').css({
+                                'height': 'auto',
+                                'overflow': 'visible'
+                            });
                             console.log('v');
                         }else{
                             isHorizontal = true;
                             e.preventDefault();
+                            $('body,html').css({
+                                'height': '100%',
+                                'overflow': 'hidden'
+                            });
                             console.log('h');
                         }
                         isLock = true;
                     }
 
-                    if(isHorizontal){
+                    if(p.touchMoveAnimate && isHorizontal){
                         $(this).css({
                             'webkitTransform':'translate3d('+(mx - sx)+'px,0px,0)',
                             'transform':'translate3d('+(mx - sx)+'px,0px,0)'
                         });
                     }
-
-
-
                 },
                 touchend: function(e){
                     var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
 
-
                     if(isHorizontal){
                         cx = touch.pageX - sx;
                         cy = touch.pageY - sy;
+
+                        if( (touch.pageX - x) < 0 ){
+                            p.swipeLeft() && p.swipeLeft();
+                        }else{
+                            p.swipeRight() && p.swipeRight();
+                        }
                     }
 
                     if(!isMove){
-                        alert('click');
+                        p.click() && p.click();
                     }
 
                     isMove = false;

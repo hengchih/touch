@@ -39,14 +39,18 @@
 
         var $ncUl = $('.nineyi-carousel .nc-ul');
 $('button').click(function(e){
-   $('footer').html('');
+  $('footer').append('left<br/>');
 });
         $ncUl.nineyiTouch({
+            touchMoveAnimate: true,
             swipeLeft: function(){
-                //console.log(typeof $ncUl.css('transform'));
+                $('button').click();
             },
             swipeRight: function(){
-
+                $('footer').append('right<br/>');
+            },
+            click: function(){
+                $('footer').append('click<br/>');
             }
         });
         $('.nineyi-carousel').nineyiCarousel();
