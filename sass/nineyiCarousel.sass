@@ -16,5 +16,8 @@
       clear: both
   .nc-li
     float: left
+    height: 300px
+    @include filter-gradient(#1e5799, #7db9e8, horizontal)
+    @include background-image(linear-gradient(left, #1e5799 0%,#2989d8 50%,#7db9e8 100%))
     img
       width: 100%
