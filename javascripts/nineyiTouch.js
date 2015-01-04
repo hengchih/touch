@@ -5,9 +5,9 @@
     "use strict";
     $.fn.nineyiTouch = function(p) {
 
-        $('body').bind('touchstart',function(e){
+        /*$('body').bind('touchstart',function(e){
             $('body').css('overflow','visible');
-        });
+        });*/
 
         var nt = (function (p) {
             var sx = 0,
@@ -40,16 +40,16 @@
                     if(!isLock){
                         if( Math.abs( Math.atan( offsetY / offsetX ) * ( 180/ Math.PI ) ) > 70 ){ // 垂直
                             isHorizontal = false;
-                            $('body').css({
+                            /*$('body').css({
                                 'overflow': 'visible'
-                            });
+                            });*/
                             //console.log('v');
                         }else{
                             isHorizontal = true;
                             e.preventDefault();
-                            $('body').css({
+                            /*$('body').css({
                                 'overflow': 'hidden'
-                            });
+                            });*/
                             //console.log('h');
                         }
                         isLock = true;
