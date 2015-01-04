@@ -3,10 +3,11 @@
   width: 100%;
   margin: 0 auto;
   border: 1px solid #bfbfbf;
+  overflow-y: hidden;
   overflow-x: scroll;
   box-sizing: border-box;
 }
-/* line 9, ../sass/nineyiCarousel.sass */
+/* line 10, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-ul {
   -moz-transition: all 0.35s ease;
   -o-transition: all 0.35s ease;
@@ -20,17 +21,17 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 14, ../sass/nineyiCarousel.sass */
+/* line 15, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-ul:before, .nineyi-carousel .nc-ul:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 18, ../sass/nineyiCarousel.sass */
+/* line 19, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-li {
   float: left;
 }
-/* line 20, ../sass/nineyiCarousel.sass */
+/* line 21, ../sass/nineyiCarousel.sass */
 .nineyi-carousel .nc-li img {
   width: 100%;
 }
