@@ -3,7 +3,7 @@
   width: 100%;
   margin: 0 auto;
   border: 1px solid #bfbfbf;
-  overflow: hidden;
+  overflow-x: scroll;
   box-sizing: border-box;
 }
 /* line 9, ../sass/nineyiCarousel.sass */
