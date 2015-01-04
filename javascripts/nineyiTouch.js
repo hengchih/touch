@@ -5,6 +5,9 @@
     "use strict";
     $.fn.nineyiTouch = function(p) {
 
+        $('body').bind('touchstart',function(e){
+            $('body').css('overflow','visible');
+        });
 
         var nt = (function (p) {
             var sx = 0,
@@ -37,19 +40,17 @@
                     if(!isLock){
                         if( Math.abs( Math.atan( offsetY / offsetX ) * ( 180/ Math.PI ) ) > 70 ){ // 垂直
                             isHorizontal = false;
-                            $('body,html').css({
-                                'height': 'auto',
+                            $('body').css({
                                 'overflow': 'visible'
                             });
-                            console.log('v');
+                            //console.log('v');
                         }else{
                             isHorizontal = true;
                             e.preventDefault();
-                            $('body,html').css({
-                                'height': '100%',
+                            $('body').css({
                                 'overflow': 'hidden'
                             });
-                            console.log('h');
+                            //console.log('h');
                         }
                         isLock = true;
                     }
